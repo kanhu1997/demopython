@@ -37,7 +37,7 @@ pipeline {
                     . ${VENV_DIR}/bin/activate
                     export FLASK_APP=app.py
                     export FLASK_ENV=development
-                    flask run --host=localhost --port=5000 &
+                    flask run --host=http:172.21.234.207 --port=5000 &
                 '''
             }
         }
