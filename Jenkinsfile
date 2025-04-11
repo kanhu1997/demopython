@@ -6,6 +6,20 @@ pipeline {
     }
 
     stages {
+        stage('Notify for Approval') {
+            steps {
+                mail to: 'kanhucharandash55@gmail.com',
+                     subject: 'Approval Needed for Python App Deployment',
+                     body: 'A Jenkins job requires your approval. Please go to Jenkins and approve it in the pipeline UI.'
+            }
+        }
+
+        stage('Wait for Manual Approval') {
+            steps {
+                input message: 'Do you approve deploying the Flask app?', ok: 'Yes, Deploy'
+            }
+        }
+
         stage('Set up virtual environment') {
             steps {
                 sh '''
