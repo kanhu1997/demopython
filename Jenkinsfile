@@ -11,7 +11,7 @@ pipeline {
  steps {
  script {
  echo 'Building Python Flask app...'
- sh 'pip install -r requirements.txt'
+ //sh 'pip install -r requirements.txt'
  }
  }
  }
